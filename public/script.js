@@ -1,4 +1,4 @@
-d3.csv("/download").then(function(data) {
+d3.csv("data.csv").then(function(data) {
     // Set up chart dimensions
     const width = 500;
     const height = 300;
