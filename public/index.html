@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSV Download & Data Visualization</title>
+    <title>CSV Filtered Visualization</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>CSV Download & Visualization</h1>
+    <h1>Filtered CSV Visualization</h1>
+
+    <label for="yearFilter">Filter by Year of School:</label>
+    <select id="yearFilter">
+        <option value="All">All</option>
+        <option value="Freshman">Freshman</option>
+        <option value="Sophomore">Sophomore</option>
+        <option value="Junior">Junior</option>
+        <option value="Senior">Senior</option>
+    </select>
+
+    <label for="sexFilter">Filter by Sex:</label>
+    <select id="sexFilter">
+        <option value="All">All</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
 
     <div id="chart"></div>
     <br>

@@ -1,6 +1,6 @@
-name,age,score
-John,25,88
-Alice,30,95
-Bob,22,79
-Carol,28,92
-David,35,85
+name,year_of_school,age,score,sex
+John,Senior,25,88,Male
+Alice,Junior,30,95,Female
+Bob,Sophomore,22,79,Male
+Carol,Senior,28,92,Female
+David,Freshman,35,85,Male
