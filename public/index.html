@@ -3,31 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSV Filtered Visualization</title>
+    <title>Advanced Data Visualization with Filters</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Filtered CSV Visualization</h1>
+    <h1>Advanced Data Visualization with Multiple Filters</h1>
 
-    <label for="yearFilter">Filter by Year of School:</label>
-    <select id="yearFilter">
-        <option value="All">All</option>
-        <option value="Freshman">Freshman</option>
-        <option value="Sophomore">Sophomore</option>
-        <option value="Junior">Junior</option>
-        <option value="Senior">Senior</option>
+    <!-- Multi-attribute filter -->
+    <label for="attributes">Select Attributes:</label>
+    <input type="checkbox" id="gdp" name="attribute" value="gdp" checked> GDP
+    <input type="checkbox" id="population" name="attribute" value="population"> Population
+    <input type="checkbox" id="unemployment_rate" name="attribute" value="unemployment_rate"> Unemployment Rate
+
+    <br><br>
+
+    <!-- Date range filter -->
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate">
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate">
+    <button id="applyFilter">Apply Filter</button>
+
+    <!-- Chart type and scale selection -->
+    <label for="chartTypeSelect">Select Chart Type:</label>
+    <select id="chartTypeSelect">
+        <option value="line">Line</option>
+        <option value="bar">Bar</option>
     </select>
 
-    <label for="sexFilter">Filter by Sex:</label>
-    <select id="sexFilter">
-        <option value="All">All</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
+    <label for="axisScaleSelect">Select Axis Scale:</label>
+    <select id="axisScaleSelect">
+        <option value="linear">Linear</option>
+        <option value="logarithmic">Logarithmic</option>
     </select>
 
-    <div id="chart"></div>
-    <br>
-    <a href="data.csv" download>Download CSV File</a>
+    <br><br>
+
+    <!-- Charts -->
+    <div id="chart1"></div>
+    <div id="chart2"></div>
+
+    <a href="/download" download>Download CSV File</a>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="script.js"></script>

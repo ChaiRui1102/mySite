@@ -1,21 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
-#chart {
-    width: 500px;
+label {
+    margin-right: 10px;
+}
+
+select {
+    margin-right: 20px;
+}
+
+#chart1, #chart2 {
+    display: inline-block;
+    width: 600px;
     height: 300px;
 }
 
-a {
-    text-decoration: none;
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-a:hover {
-    background-color: #0056b3;
+svg {
+    border: 1px solid black;
 }
