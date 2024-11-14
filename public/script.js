@@ -16,6 +16,9 @@ const districtList = document.getElementById('districtList');
 const selectedDistrictDiv = document.getElementById('selectedDistrict');
 const terminologyList = document.getElementById('terminologyList');
 const attributesList = document.getElementById('attributesList');
+const terminologyBox = document.getElementById('terminologyBox');
+const terminologyContent = document.getElementById('terminologyContent');
+const minimizeButton = document.getElementById('minimizeButton');
 
 // Tooltip
 const tooltip = d3.select('body').append('div')
@@ -39,6 +42,25 @@ function initializeTerminology() {
             <div class="terminology-definition">${definition}</div>
         `;
         terminologyList.appendChild(div);
+    });
+}
+
+// Update the minimize button functionality
+function initializeTerminologyBox() {
+    let isMinimized = false;
+
+    minimizeButton.addEventListener('click', () => {
+        isMinimized = !isMinimized;
+        terminologyBox.classList.toggle('minimized', isMinimized);
+        terminologyContent.classList.toggle('hidden', isMinimized);
+        
+        // Update both text and icon
+        const minimizeText = minimizeButton.querySelector('.minimize-text');
+        const minimizeIcon = minimizeButton.querySelector('.minimize-icon');
+        
+        minimizeText.textContent = isMinimized ? 'expand' : 'minimize';
+        minimizeIcon.textContent = isMinimized ? '▴' : '▾';
+        minimizeIcon.classList.toggle('rotated', isMinimized);
     });
 }
 
@@ -112,6 +134,7 @@ d3.csv("data_cleaned.csv").then(data => {
     });
 
     initializeTerminology();
+    initializeTerminologyBox();
     setupEventListeners();
 });
 

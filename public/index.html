@@ -54,15 +54,65 @@
             padding: 20px;
         }
         .terminology-box {
-            position: absolute;
-            right: 20px;
-            width: 250px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+    position: absolute;
+    right: 20px;
+    width: 250px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: height 0.3s ease;
+}
+
+
+.terminology-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.minimize-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.minimize-control:hover {
+    color: #000;
+}
+
+.minimize-text {
+    user-select: none; /* Prevents text selection */
+}
+
+.close-button {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+.terminology-box.minimized {
+    height: 45px;
+    overflow: hidden;
+}
+
+.minimize-icon {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.minimize-icon.rotated {
+    transform: rotate(180deg);
+}
         .terminology-item {
             margin-bottom: 10px;
         }
@@ -190,11 +240,19 @@
             </div>
         </div>
 
-        <div class="terminology-box">
-            <h3>Terminology</h3>
-            <div id="terminologyList"></div>
+<!-- Update the terminology box header HTML -->
+<div class="terminology-box" id="terminologyBox">
+    <div class="terminology-header" id="terminologyHeader">
+        <h3>Terminology</h3>
+        <div class="minimize-control" id="minimizeButton">
+            <span class="minimize-text">minimize</span>
+            <span class="close-button minimize-icon">▾</span>
         </div>
     </div>
+    <div class="terminology-content" id="terminologyContent">
+        <div id="terminologyList"></div>
+    </div>
+</div>
     <script src="script.js"></script>
 </body>
 </html>
